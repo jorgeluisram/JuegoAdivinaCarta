@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>juego</ion-title>
+    <ion-buttons slot="end">
+      <ion-button  [routerLink]="['/home']">
+        <ion-icon name="arrow-back-outline" style="font-size: 40px;"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+  
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label>Aciertos</ion-label>
+    <ion-badge color="success" slot="end">{{Aciertos}}</ion-badge>
+  </ion-item>
+ 
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <!-- <ion-button  (click)="change(i,item.visible,item.Adivina)" *ngFor="let item of item ; index as i" [color]="item.visible == true ? 'danger' : 'primary'">{{item.visible == true?item.Adivina:item.Text}}</ion-button> -->
+        <ion-card (click)="change(i,item.visible,item.Adivina)" *ngFor="let item of item ; index as i" [color]="item.visible == true ? 'danger' : 'primary'">
+          <ion-icon name="happy" item-left></ion-icon>
+          <h2>{{item.visible == true?item.Adivina:item.Text}}</h2>
+  
+      </ion-card>
+      </ion-col>
+
+      <ion-col>
+        <!-- <ion-button  (click)="change(i,item.visible,item.Adivina)" *ngFor="let item of item ; index as i" [color]="item.visible == true ? 'danger' : 'primary'">{{item.visible == true?item.Adivina:item.Text}}</ion-button> -->
+        <ion-card (click)="change2(i,item.visible,item.Adivina)" [disabled]="!visible" *ngFor="let item of item2 ; index as i" [color]="item.visible == true ? 'danger' : 'primary'">
+          <ion-icon name="happy" item-left></ion-icon>
+          <h2>{{item.visible == true?item.Adivina:item.Text}}</h2>
+  
+      </ion-card>
+      </ion-col>
+     
+    </ion-row>
+
+  
+  </ion-grid>
+
+</ion-content>
